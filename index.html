@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery form example</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h1>Registration</h1>
+                <form action="" id="registration-form">
+                    <!-- <div>
+                        <label>Name</label>
+                        <input type="text" id="formName" name="" required>
+                        <span class="error_formName" id="formName_error_message"></span>
+                    </div> -->
+                    <div>
+                        <label>E-mail Address</label>
+                        <input type="email" id="eMail" name="" required>
+                        <span class="error_eMail" id="email_error_message"></span>
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input type="password" id="pword" name="" required>
+                        <span class="error_password" id="pword_error_message"></span>
+                    </div>
+                    <div>
+                        <label>Confirm Password</label>
+                        <input type="password" id="pword1" name="" required>
+                        <span class="error_pword" id="pword1_error_message"></span>
+                    </div>
+                    <input type="submit">
+                </form>
+
+        </div>
+    </section>
+    <script src="js/script.js">
+            $(function () {
+        
+                // $("#formName_error_message").hide();
+                $("#email_error_message").hide();
+                $("#pword_error_message").hide();
+                $("#pword1_error_message").hide(); 
+            
+                // var error_formName=false;
+                var error_eMail=false;
+                var error_password=false;
+                var error_pword=false; 
+
+
+                // $("#formName").focusout(function() {
+                //     check.formName();
+                // }
+                // );
+                $("#eMail").focusout(function() {
+                    check.eMail();
+                }
+                );
+                $("#pword").focusout(function() {
+                    check.pword();
+                }
+                );
+                $("#pword1").focusout(function() {
+                    check.pword1();
+                }
+                );
+
+                // function check_eMail() {
+                //     var pattern=/^[a-zA-Z]*$/;
+                //     var =$("#form_check_eMail").va
+                // }
+
+                function check_email() {
+                    var pattern = /^([a-zA-z])*$/;
+                    var email = $("#eMail").va1();
+                    if (pattern.test(email) && email !== '') {
+                        $("#email_error_message").hide();
+                        $("#eMail").css ("border-bottom" , "2px solid crimson")
+                            
+                        
+                    } else {
+                        $("#email_error_message").html("Invalid Email");
+                        $("#email_error_message").show();
+                        $("#form_email").css("border_bottom", "2px solid #9999");
+                        error_email= true;
+                    }
+                }
+             
+                $("#registration_form").submit(function(){
+                    error_formName=false;
+                    error_password=false;
+                    error_pword=false; 
+
+                    check_formName();
+                    
+
+                if (error_eMail===false && error_password===false && error_pword===false) {
+                    alert("sucessful!");
+                    return true;
+                } else {
+                    alert("fill correctly");
+                    return false;
+                };
+                 
+
+                });
+            } );
+   
+   </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

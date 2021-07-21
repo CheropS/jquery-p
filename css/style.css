@@ -1,0 +1,12 @@
+h1 {
+    color: yellowgreen;
+}
+label {
+    color: #CC1D6C;
+}
+#registration-form {
+    border: 1px solid #6145CC;
+    width: 30%;
+    font-size: medium;
+
+}
